@@ -1,0 +1,43 @@
+{
+  "sheepl": {
+    "name": "Blue Team",
+    "total_time": "10m",
+    "typing_speed": 50,
+    "loop": "True",
+    "icon": "False",
+    "tasks": [
+      {
+        "task": "Browser",
+        "browser": "edge",
+        "urls": [
+          "http://10.2.10.10"
+        ]
+      },
+      {
+        "task": "Browser",
+        "browser": "edge",
+        "urls": [
+          "http://10.2.10.40/vendor-portal"
+        ]
+      },
+      {
+        "task": "CommandShell",
+        "cmd": [
+          "whoami /all",
+          "ipconfig /all",
+          "net time",
+          "tasklist",
+          "dir %USERPROFILE%\\Documents"
+        ]
+      },
+      {
+        "task": "PowerShell",
+        "cmd": [
+          "Get-Service | Where-Object {$_.Status -eq 'Running'}",
+          "Get-Process | Select-Object -First 10",
+          "Get-ChildItem C:\\"
+        ]
+      }
+    ]
+  }
+}
